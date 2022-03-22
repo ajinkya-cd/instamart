@@ -4,7 +4,7 @@ class ProductModel extends ProductEntity {
   const ProductModel(
       {int? id,
       String? title,
-      double? price,
+      dynamic price,
       String? description,
       String? category,
       String? image,
