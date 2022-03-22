@@ -1,5 +1,5 @@
-import 'package:instamart/data/models/product_model.dart';
+import 'package:instamart/domain/entities/product_entity.dart';
 
 abstract class ProductsRepository {
-  Future<ProductModel> getAllProducts();
+  Future<List<ProductEntity>> getAllProducts();
 }
