@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:instamart/kiwi_injector.dart';
-import 'di/injection_container.dart';
+import 'package:instamart/injector_config.dart';
 import 'presentation/products_list/products_list_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // await initInjector();
-  KiwiInjector.setup();
+  InjectorConfig.setup();
   runApp(const MyApp());
 }
 

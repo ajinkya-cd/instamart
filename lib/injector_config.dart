@@ -6,14 +6,14 @@ import 'data/remote_date_sources/products_remote_data_source.dart';
 import 'domain/repositories/products_repository.dart';
 import 'domain/usecases/get_all_products.dart';
 
-part 'kiwi_injector.g.dart';
+part 'injector_config.g.dart';
 
-abstract class KiwiInjector {
+abstract class InjectorConfig {
   static KiwiContainer? container;
 
   static void setup() {
     container = KiwiContainer();
-    _$KiwiInjector()._configure();
+    _$InjectorConfig()._configure();
   }
 
   static final resolve = container!.resolve;

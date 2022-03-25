@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:instamart/kiwi_injector.dart';
+import 'package:instamart/injector_config.dart';
 import 'package:instamart/presentation/products_list/widgets/product_card.dart';
 
-import '../../../di/injection_container.dart';
 import '../bloc/products_list_bloc.dart';
 
 class ProductsList extends StatelessWidget {
@@ -17,7 +16,7 @@ class ProductsList extends StatelessWidget {
   BlocProvider<ProductsListBloc> buildProductsList(BuildContext context) {
     return BlocProvider(
       // create: (_) => sl<ProductsListBloc>(),
-      create: (_) => KiwiInjector.resolve<ProductsListBloc>(),
+      create: (_) => InjectorConfig.resolve<ProductsListBloc>(),
       child: Center(
         child: BlocBuilder<ProductsListBloc, ProductsListState>(
           builder: (context, state) {
