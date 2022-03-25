@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:instamart/injector_config.dart';
+import 'package:instamart/di/injector_config.dart';
 import 'package:instamart/presentation/products_list/widgets/product_card.dart';
 
 import '../bloc/products_list_bloc.dart';

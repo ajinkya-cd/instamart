@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instamart/injector_config.dart';
+import 'package:instamart/di/injector_config.dart';
 import 'presentation/products_list/products_list_page.dart';
 
 void main() async {
