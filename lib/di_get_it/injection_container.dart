@@ -10,7 +10,7 @@ final sl = GetIt.instance;
 Future<void> initInjector() async {
   // Bloc
   sl.registerFactory<ProductsListBloc>(
-        () => ProductsListBloc(getAllProducts: sl()),
+        () => ProductsListBloc(getAllProducts: sl(), addProductToCartUsecase: sl()),
   );
 
   // Use cases

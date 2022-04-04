@@ -29,7 +29,12 @@ class ProductsList extends StatelessWidget {
             } else if (state is Loaded) {
               return ListView(
                 children: state.productsList
-                    .map((product) => ProductCard(productEntity: product))
+                    .map((product) => ProductCard(
+                      productEntity: product,
+                      onPressed: (){
+                        BlocProvider.of<ProductsListBloc>(context).add(AddProductToCartEvent(product: product));
+                      },
+                  ))
                     .toList(),
               );
             } else if (state is Error) {
@@ -41,5 +46,14 @@ class ProductsList extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class BlocController extends StatelessWidget {
+  const BlocController({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }

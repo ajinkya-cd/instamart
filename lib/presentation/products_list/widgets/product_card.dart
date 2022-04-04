@@ -3,8 +3,9 @@ import '../../../domain/entities/product_entity.dart';
 
 class ProductCard extends StatelessWidget {
   final ProductEntity productEntity;
+  final VoidCallback onPressed;
 
-  const ProductCard({Key? key, required this.productEntity}) : super(key: key);
+  const ProductCard({Key? key, required this.productEntity, required this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +20,20 @@ class ProductCard extends StatelessWidget {
           loadingBuilder: (BuildContext context, Widget child,
               ImageChunkEvent? loadingProgress) {
             if (loadingProgress == null) return child;
-            return Center(
-              child: CircularProgressIndicator(
-                value: loadingProgress.expectedTotalBytes != null
-                    ? loadingProgress.cumulativeBytesLoaded /
-                        loadingProgress.expectedTotalBytes!
-                    : null,
-              ),
+            return CircularProgressIndicator(
+              value: loadingProgress.expectedTotalBytes != null
+                ? loadingProgress.cumulativeBytesLoaded /
+                    loadingProgress.expectedTotalBytes!
+                : null,
             );
           },
         ),
-        title: Text(productEntity.title!),
+        title: Column(
+          children: [
+            Text(productEntity.title!),
+            ElevatedButton(onPressed: onPressed, child: const Text('Add to Cart'))
+          ],
+        ),
         trailing: Text(productEntity.price.toString()),
       ),
     );

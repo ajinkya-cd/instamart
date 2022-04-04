@@ -1,7 +1,12 @@
+import 'package:instamart/data/local_data_sources/cart_local_data_source.dart';
+import 'package:instamart/data/repositories/cart_repository_impl.dart';
 import 'package:instamart/data/repositories/products_repository_impl.dart';
+import 'package:instamart/domain/repositories/cart_repository.dart';
+import 'package:instamart/domain/usecases/add_product_to_cart.dart';
 import 'package:instamart/presentation/products_list/bloc/products_list_bloc.dart';
 import 'package:kiwi/kiwi.dart';
 
+import '../core/local_preferences/local_preferences.dart';
 import '../data/remote_date_sources/products_remote_data_source.dart';
 import '../domain/repositories/products_repository.dart';
 import '../domain/usecases/get_all_products.dart';
@@ -20,7 +25,11 @@ abstract class InjectorConfig {
 
   @Register.factory(ProductsListBloc)
   @Register.factory(GetAllProducts)
+  @Register.factory(AddProductToCartUsecase)
   @Register.factory(ProductsRepository, from: ProductsRepositoryImpl)
+  @Register.factory(CartRepository, from: CartRepositoryImpl)
   @Register.factory(ProductsRemoteDataSource, from: ProductsRemoteDataSourceImpl)
+  @Register.factory(CartLocalDaraSource, from: CartLocalDaraSourceImpl)
+  @Register.singleton(LocalPreferences)
   void _configure();
 }

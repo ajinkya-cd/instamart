@@ -11,3 +11,13 @@ class GetAllProductsEvent extends ProductsListEvent {
   // TODO: implement props
   List<Object?> get props => [];
 }
+
+class AddProductToCartEvent extends ProductsListEvent {
+  final ProductEntity product;
+
+  const AddProductToCartEvent({required this.product});
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => throw UnimplementedError();
+}
