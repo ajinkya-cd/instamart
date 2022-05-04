@@ -1,26 +1,21 @@
 import '../../domain/entities/product_entity.dart';
 
 class ProductModel extends ProductEntity {
-  const ProductModel(
-      {int? id,
-      String? title,
-      dynamic price,
-      String? description,
-      String? category,
-      String? image,
-      // double? rating,
-      // double? count
-      })
-      : super(
-            id: id,
-            title: title,
-            price: price,
-            description: description,
-            category: category,
-            image: image,
-            // rating: rating,
-            // count: count
-      );
+  const ProductModel({
+    int? id,
+    String? title,
+    dynamic price,
+    String? description,
+    String? category,
+    String? image,
+  }) : super(
+          id: id,
+          title: title,
+          price: price,
+          description: description,
+          category: category,
+          image: image,
+        );
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
@@ -30,8 +25,6 @@ class ProductModel extends ProductEntity {
       description: json['description'],
       category: json['category'],
       image: json['image'],
-      // rating: json['rating'],
-      // count: json['count'],
     );
   }
 
@@ -43,8 +36,6 @@ class ProductModel extends ProductEntity {
       'description': description,
       'category': category,
       'image': image,
-      // 'rating': rating,
-      // 'count': count,
     };
   }
 }

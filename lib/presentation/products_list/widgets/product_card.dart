@@ -31,7 +31,7 @@ class ProductCard extends StatelessWidget {
         title: Column(
           children: [
             Text(productEntity.title!),
-            ElevatedButton(onPressed: onPressed, child: const Text('Add to Cart'))
+            // ElevatedButton(onPressed: onPressed, child: const Text('Add to Cart'))
           ],
         ),
         trailing: Text(productEntity.price.toString()),

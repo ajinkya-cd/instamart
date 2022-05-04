@@ -11,7 +11,7 @@ part 'products_list_event.dart';
 part 'products_list_state.dart';
 
 class ProductsListBloc extends Bloc<ProductsListEvent, ProductsListState> {
-  final GetAllProducts getAllProducts;
+  final GetAllProductsUsecase getAllProducts;
   final AddProductToCartUsecase addProductToCartUsecase;
 
   ProductsListBloc({required this.getAllProducts, required this.addProductToCartUsecase})

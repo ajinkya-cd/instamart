@@ -14,7 +14,7 @@ Future<void> initInjector() async {
   );
 
   // Use cases
-  sl.registerLazySingleton(() => GetAllProducts(sl()));
+  sl.registerLazySingleton(() => GetAllProductsUsecase(sl()));
 
   // Repository
   sl.registerLazySingleton<ProductsRepository>(
