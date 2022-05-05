@@ -48,12 +48,3 @@ class ProductsList extends StatelessWidget {
     );
   }
 }
-
-class BlocController extends StatelessWidget {
-  const BlocController({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
